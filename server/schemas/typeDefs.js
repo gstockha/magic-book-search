@@ -1,12 +1,10 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
-const { signToken } = require('../utils/auth');
+const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
 
     type Book {
         _id: ID
-        authods: [String]!
+        authors: [String]!
         description: String!
         bookId: String
         image: String
@@ -39,3 +37,5 @@ const typeDefs = gql`
     }
 
 `
+
+module.exports = typeDefs;
